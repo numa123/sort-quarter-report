@@ -4,6 +4,8 @@ from mergesort import mergeSort;
 from quicksort import quickSort;
 from heapsort import heapSort;
 from radixsort import radixSort;
+from shellsort import shellSort;
+from selectionsort import selectionSort;
 import pandas as pd
 import time
 from pandas import DataFrame
@@ -47,7 +49,12 @@ def main(input_file_path, file_size):
     # radix sort
     # sort_and_time(radixSort, data, file_size, 'radixSort')
 
-    
+    # shell sort
+    # sort_and_time(shellSort, data, file_size, 'shellSort')
+
+    # selection sort
+    # sort_and_time(shellSort, data, file_size, 'selectionSort')
+
 
 
 
