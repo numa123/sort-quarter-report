@@ -5,6 +5,10 @@ from quicksort import quickSort;
 from heapsort import heapSort;
 from radixsort import radixSort;
 from shellsort import shellSort;
+from gnomesort import gnomeSort;
+from oddevensort import oddEvenSort;
+from shakersort import shakerSort;
+from pancakesort import pancakeSort;
 from selectionsort import selectionSort;
 import pandas as pd
 import time
@@ -38,7 +42,7 @@ def sort_and_time(sort_function, data, file_size, sort_name):
         end_time = time.time()
         elapsed_time = end_time - start_time
         formatted_time = format_time(elapsed_time)
-        print(f"{sort_name}: {formatted_time} seconds")
+        print(f"{sort_name}: {formatted_time} sec")
         # print(sorted_arr)
 
 
@@ -55,28 +59,38 @@ def main(input_file_path, file_size):
     # merge sort
     sort_and_time(mergeSort, data, file_size, "insertionSort")
 
+    # shell sort
+    sort_and_time(shellSort, data, file_size, 'shellSort')
+
+    # radix sort
+    sort_and_time(radixSort, data, file_size, 'radixSort')
+
     # bubble sort
     sort_and_time(bubbleSort, data, file_size, "bubbleSort")
 
     # insertion sort
     sort_and_time(insertionSort, data, file_size, "insertionSort")
 
-    # shell sort
-    sort_and_time(shellSort, data, file_size, 'shellSort')
-
     # selection sort
-    sort_and_time(shellSort, data, file_size, 'selectionSort')
+    sort_and_time(selectionSort, data, file_size, 'selectionSort')
 
-    # radix sort
-    sort_and_time(radixSort, data, file_size, 'radixSort')
+    # gnome sort
+    sort_and_time(gnomeSort, data, file_size, 'gnomeSort')
 
+    # shaker sort
+    sort_and_time(shakerSort, data, file_size, 'shakerSort')
 
+    # oddeven sort
+    sort_and_time(oddEvenSort, data, file_size, 'oddEvenSort')
 
+    # pancake sort
+    sort_and_time(pancakeSort, data, file_size, 'pancakeSort')
 
-
-file_sizes = [100000]
+file_sizes = [10, 100, 1000, 10000, 100000]
 
 for file_size in file_sizes:
     input_file_path = f"./movie_dataset_subset{file_size}.csv"
-    print(f"File size: {file_size}...")
+    print(f"⭐️⭐️⭐️File size: {file_size}...")
     main(input_file_path, file_size)
+    print("")
+
